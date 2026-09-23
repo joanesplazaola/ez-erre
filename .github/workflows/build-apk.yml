@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "Versión de la release (ej. v1.0.0)"
+        description: "Versión de la release (ej. v1.2.0)"
         required: true
-        default: "v1.0.0"
+        default: "v1.2.0"
 
 permissions:
   contents: write
@@ -14,39 +14,23 @@ permissions:
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Java 17
-        uses: actions/setup-java@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "17"
-
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v4
-
-      - name: Install Android SDK packages
-        run: sdkmanager "platforms;android-36" "build-tools;35.0.0"
-
-      - name: Set up Gradle 8.13
-        uses: gradle/actions/setup-gradle@v6
+      - uses: android-actions/setup-android@v4
+      - run: sdkmanager "platforms;android-36" "build-tools;35.0.0"
+      - uses: gradle/actions/setup-gradle@v6
         with:
           gradle-version: "8.13"
-
-      - name: Build debug APK
-        run: gradle --no-daemon assembleDebug
-
-      - name: Prepare release APK
-        run: |
+      - run: gradle --no-daemon assembleDebug
+      - run: |
           mkdir -p release
           cp app/build/outputs/apk/debug/app-debug.apk release/ez-erre.apk
-
-      - name: Create GitHub Release
-        env:
+      - env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ inputs.version }}
         run: |
-          gh release create "$VERSION"             release/ez-erre.apk             --target "${GITHUB_SHA}"             --title "EZ ERRE $VERSION"             --generate-notes
+          gh release create "$VERSION" release/ez-erre.apk --target "${GITHUB_SHA}" --title "EZ ERRE $VERSION" --generate-notes
