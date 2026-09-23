@@ -1,12 +1,18 @@
-name: Build Android APK
+name: Build & Release Android APK
 
 on:
   workflow_dispatch:
-  push:
-    branches: [ "main" ]
+    inputs:
+      version:
+        description: "Versión de la release (ej. v1.0.0)"
+        required: true
+        default: "v1.0.0"
+
+permissions:
+  contents: write
 
 jobs:
-  build:
+  build-and-release:
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +23,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: "17"
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
@@ -28,14 +34,19 @@ jobs:
       - name: Set up Gradle 8.13
         uses: gradle/actions/setup-gradle@v6
         with:
-          gradle-version: '8.13'
+          gradle-version: "8.13"
 
       - name: Build debug APK
         run: gradle --no-daemon assembleDebug
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: ez-erre-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
-          if-no-files-found: error
+      - name: Prepare release APK
+        run: |
+          mkdir -p release
+          cp app/build/outputs/apk/debug/app-debug.apk release/ez-erre.apk
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VERSION: ${{ inputs.version }}
+        run: |
+          gh release create "$VERSION"             release/ez-erre.apk             --target "${GITHUB_SHA}"             --title "EZ ERRE $VERSION"             --generate-notes
