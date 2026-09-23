@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="eu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>EZ ERRE</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:
+repeating-linear-gradient(to bottom,#fbfbfb 0,#fbfbfb 7px,#ececec 8px,#ececec 10px);
+font-family:"Courier New",monospace;color:#151515}
+body{min-height:100vh}
+.screen{min-height:100vh;padding:38px 24px 28px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+h1{font-size:clamp(39px,10vw,66px);line-height:.88;letter-spacing:-4px;margin:0 0 32px;font-weight:900;text-transform:uppercase}
+.red-outer{width:min(78vw,370px);aspect-ratio:1;border-radius:50%;background:#ad3434;display:flex;align-items:center;justify-content:center;margin:8px auto 34px}
+.red-btn{width:84%;height:84%;border:0;border-radius:50%;background:#d52121;color:#fff;font:900 clamp(34px,10vw,58px)/.93 "Courier New",monospace;text-transform:uppercase}
+.red-btn:active{transform:scale(.97)}
+.promo{background:#3150e8;border:8px solid #293eaf;color:#fff;padding:14px 16px;font-size:clamp(20px,5vw,31px);font-weight:700;line-height:1.05}
+.linkish{margin-top:24px;color:#1e3dd2;text-decoration:underline;font-size:clamp(17px,4vw,24px)}
+.result{display:none;width:100%}.result.show{display:block}
+.brand{font-size:clamp(35px,9vw,60px);font-weight:900;line-height:.9;margin-bottom:12px;text-align:left}
+.progress{height:54px;border:7px solid #111;background:#fff;margin:0 0 24px;display:flex}
+.progress span{display:flex;align-items:center;padding:0 10px;background:#ff8a00;font-size:clamp(25px,7vw,42px);font-weight:900}
+.gifbox{width:100%;min-height:310px;background:#fff;display:flex;align-items:center;justify-content:center;padding:12px;margin-bottom:22px}
+.gifbox img{width:100%;max-height:390px;object-fit:contain;image-rendering:pixelated}
+.phrase{background:#fff;border:7px solid #111;padding:18px 15px;font-size:clamp(21px,5.5vw,32px);line-height:1.08;font-weight:900;text-transform:uppercase;margin-bottom:22px}
+.back{width:auto;border:7px solid #2940ae;border-radius:12px;background:#3150e8;color:#fff;padding:9px 20px;font:900 clamp(23px,6vw,34px) "Courier New",monospace}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+<main class="screen">
+<section id="home">
+  <h1>ZIGARRO BAT ERRE<br>NAHI DUZU?</h1>
+  <div class="red-outer"><button id="go" class="red-btn">SAKATU<br>HEMEN!</button></div>
+  <div class="promo">EZAGUTU ASIER K-REN<br>METODO ARRAKASTATSUA!</div>
+  <div class="linkish">European Corp.-ek boteretua</div>
+</section>
+
+<section id="result" class="result">
+  <div class="brand">EZ ERRE<br>ZIGARRO 🚫</div>
+  <div class="progress"><span>HAU</span></div>
+  <div class="gifbox"><img id="gif" src="asier.gif" alt="Ez erre"></div>
+  <div id="phrase" class="phrase"></div>
+  <button id="back" class="back">ATZERA</button>
+</section>
+</main>
+<script>
+const phrases=[
+"Gogoak pasatzen dira. Zigarroak ez du ezer konpontzen.",
+"Itxaron hamar minutu. Gero erabaki.",
+"Ez duzu zigarro bat behar. Nikotina da eskatzen ari dena.",
+"Gaurko borroka hau bakarrik irabazi behar duzu.",
+"Zigarro bat ez da sari bat. Tranpa bera da berriro.",
+"Arnasa hartu. Ura edan. Bost minutu itxaron.",
+"Gogoa olatu bat da: igo, jaitsi eta desagertu egiten da.",
+"Ez negoziatu gogoarekin. Utzi pasatzen.",
+"Beste behin ere lortu duzu. Oraingoan ere bai.",
+"Zigarro hau ez erretzea nahikoa da oraingoz.",
+"Gogoak ez du agintzen. Zuk erabakitzen duzu.",
+"Bost minutu barru eskertuko duzu ez piztu izana.",
+"Ez erre hau. Hurrengoaz gero hitz egingo dugu.",
+"Zure gorputzak nikotina eskatzen du, ez zigarroa.",
+"Ez duzu motibatuta egon behar orain ez erretzeko."
+];
+let prev=-1;
+const home=document.getElementById("home"),result=document.getElementById("result"),phrase=document.getElementById("phrase"),gif=document.getElementById("gif");
+document.getElementById("go").onclick=()=>{
+  let i; do{i=Math.floor(Math.random()*phrases.length)}while(phrases.length>1&&i===prev); prev=i;
+  phrase.textContent=phrases[i];
+  home.classList.add("hidden");
+  result.classList.add("show");
+  gif.src=""; gif.src="asier.gif?t="+Date.now();
+};
+document.getElementById("back").onclick=()=>{result.classList.remove("show");home.classList.remove("hidden");};
+</script>
+</body>
+</html>
