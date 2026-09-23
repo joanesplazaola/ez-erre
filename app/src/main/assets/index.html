@@ -14,47 +14,54 @@ body{min-height:100vh}.screen{min-height:100vh;padding:28px 20px;display:flex;fl
 .red-outer{width:min(84vw,390px);aspect-ratio:1;border-radius:50%;background:#b43b3b;display:flex;align-items:center;justify-content:center;margin:0 auto 30px}
 .red-btn{width:84%;height:84%;border:0;border-radius:50%;background:#d91f1f;color:#fff;font:900 clamp(36px,10vw,60px)/.9 'PP NeueBit',monospace}
 .blue-btn{width:100%;border:8px solid #293eaf;background:#3150e8;color:#fff;padding:14px;font:900 clamp(23px,6vw,36px)/1 'PP NeueBit',monospace;border-radius:16px}
-.linkish{margin-top:18px;color:#2143d5;text-decoration:underline;font-size:clamp(17px,4vw,24px)}
-.exact-ui{width:100%;display:block;image-rendering:pixelated;margin-bottom:18px}
+.linkish{margin-top:18px;border:0;background:none;color:#2143d5;text-decoration:underline;font-size:clamp(27px,7vw,39px)}
+.smoke-head{display:grid;grid-template-columns:1fr 1.05em;align-items:center;width:100%;margin-bottom:18px;text-align:left;font-size:clamp(84px,22vw,132px);font-weight:900;line-height:.6;letter-spacing:-1px}
+.no-smoking{grid-column:2;grid-row:1/3;width:1.05em;height:1.05em;justify-self:end}
+.smoke-line{grid-column:1/3;display:flex;align-items:stretch;margin-top:.16em;font-size:.9em}.smoke-line b{background:#f28a00;padding:.08em .16em 0}.smoke-line span{flex:1;background:#fff;border:3px solid #111}
 .gifbox{width:100%;min-height:320px;background:#fff;padding:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
 .gifbox img{width:100%;max-height:390px;object-fit:contain;image-rendering:pixelated}
-.phrase{width:100%;border:7px solid #111;background:#fff;padding:16px;font-size:clamp(22px,5.5vw,32px);line-height:1.06;font-weight:900;text-transform:uppercase;margin-bottom:18px}
-.back{border:7px solid #2a42ac;background:#3150e8;color:#fff;border-radius:12px;padding:8px 18px;font:900 clamp(24px,6vw,34px) 'PP NeueBit',monospace}
+.phrase{width:100%;border:7px solid #111;background:#fff;padding:16px;font-size:clamp(32px,8vw,46px);line-height:1;font-weight:900;text-transform:uppercase;margin-bottom:18px}
+.back{border:8px solid #2a42ac;background:#3150e8;color:#fff;border-radius:14px;padding:10px 26px;font:900 clamp(46px,11vw,60px) 'PP NeueBit',monospace}
 .orange{color:#d98b28}.blue{color:#1d84d2}
-.method-kicker{text-align:left;font-size:clamp(18px,4.8vw,27px);font-weight:900}
+.method-kicker{text-align:left;font-size:clamp(30px,7vw,44px);font-weight:900}
 .method-title{font-size:clamp(48px,11vw,70px);line-height:.82;letter-spacing:-4px;font-weight:900;margin-bottom:10px}
-.copy{font-size:clamp(15px,3.8vw,20px);line-height:1.1;margin:7px 0}
+.copy{font-size:clamp(19px,4.8vw,27px);line-height:1.05;margin:9px 0}
 .hr{height:6px;background:#1d84d2;margin:12px 0 18px}
-.logo{width:70%;max-width:300px;margin:0 auto 18px;display:block;image-rendering:pixelated}
 .portrait{width:80%;max-width:330px;margin:0 auto 12px;display:block;image-rendering:pixelated}
-.section-title{font-size:clamp(30px,7vw,44px);font-weight:900;line-height:.9;margin:10px 0}
-.big-blue{font-size:clamp(30px,7vw,44px);font-weight:900;margin:12px 0}
-.step-n{font-size:clamp(52px,11vw,74px);font-weight:900;line-height:.8;margin-top:12px}
-.step-title{font-size:clamp(24px,6vw,36px);font-weight:900;line-height:.94;margin-bottom:6px}
-.case-title{font-size:clamp(38px,8vw,54px);font-weight:900;margin:24px 0 16px}
+.section-title{font-size:clamp(42px,10vw,62px);font-weight:900;line-height:.8;margin:14px 0}
+.big-blue{font-size:clamp(38px,9vw,56px);font-weight:900;margin:14px 0}
+.step-n{font-size:clamp(72px,17vw,108px);font-weight:900;line-height:.7;margin-top:22px}
+.step-title{font-size:clamp(34px,8vw,52px);font-weight:900;line-height:.8;margin-bottom:8px}
+.case-title{font-size:clamp(50px,12vw,72px);font-weight:900;line-height:.78;margin:34px 0 22px}
 .case img{width:90%;max-width:370px;display:block;margin:0 auto 7px;image-rendering:pixelated}
-.case-name{color:#2c67c5;font-size:clamp(18px,4.6vw,27px);font-weight:900}
-.case-quote{font-size:clamp(17px,4.2vw,24px);line-height:1.03;margin-bottom:18px}
+.case-name{color:#2c67c5;font-size:clamp(28px,6.5vw,40px);font-weight:900}
+.case-quote{font-size:clamp(26px,6vw,36px);line-height:1;margin-bottom:24px}
 
-.home-title{font-size:clamp(58px,15vw,94px)!important;line-height:.72!important;letter-spacing:-1px!important}
-.red-btn{font-size:clamp(50px,13vw,78px)!important;line-height:.78!important}
-.blue-btn{font-size:clamp(32px,8.5vw,50px)!important;line-height:.82!important}
-.method-title{font-size:clamp(64px,16vw,100px)!important;line-height:.72!important;letter-spacing:-1px!important}
+.home-title{font-size:clamp(84px,21.6vw,132px)!important;line-height:.68!important;letter-spacing:-1px!important}
+.red-btn{font-size:clamp(77px,19.8vw,115px)!important;line-height:.72!important}
+.blue-btn{font-size:clamp(38px,10.2vw,60px)!important;line-height:.82!important}
+.method-title{font-size:clamp(76px,19vw,118px)!important;line-height:.68!important;letter-spacing:-1px!important}
 .section-title,.step-title,.case-title{line-height:.8!important}
+.corp-logo{position:relative;width:min(86vw,390px);aspect-ratio:1;border-radius:50%;overflow:hidden;margin:0 auto 12px;background:#304ccc}.corp-logo img{position:absolute;left:50%;top:50%;width:136%;height:136%;object-fit:cover;transform:translate(-50%,-50%);image-rendering:pixelated}
+.corp-title{font-size:clamp(42px,10vw,64px);font-weight:900;line-height:.82;margin:10px 0 24px}.corp-copy{color:#2949ac;font-size:clamp(25px,6vw,38px);font-weight:900;line-height:.88}.corp-cta{margin:28px auto 16px;border:9px solid #a92525;border-radius:18px;background:#c83232;color:#fff;padding:12px;font-size:clamp(35px,8vw,50px);font-weight:900}.corp-back{border-color:#2444ae}
 
 </style>
 </head>
 <body>
 <main class="screen">
 <section id="home" class="wrap">
-  <h1 class="home-title">ZIGARRO BAT<br>ERRE NAHI DUZU?</h1>
+  <h1 class="home-title">ZIGARRO<br>BAT ERRE<br>NAHI DUZU?</h1>
   <div class="red-outer"><button id="go" class="red-btn">SAKATU<br>HEMEN!</button></div>
   <button id="methodBtn" class="blue-btn">Ezagutu Asier K-ren<br>metodo arrakastatsua!</button>
-  <div class="linkish">Euripean Corp.-ek boteretua</div>
+  <button id="corpBtn" class="linkish">Euripean Corp.-ek boteretua</button>
 </section>
 
 <section id="smoke" class="wrap hidden">
-  <img src="ezerre_real.png" class="exact-ui" alt="EZ ERRE ZIGARRO HAU">
+  <div class="smoke-head" aria-label="EZ ERRE ZIGARRO HAU">
+    <div>EZ ERRE</div><svg class="no-smoking" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" fill="#b43b3b"/><circle cx="50" cy="50" r="28" fill="#fff"/><path d="M24 76 76 24" stroke="#b43b3b" stroke-width="16"/></svg>
+    <div>ZIGARRO</div>
+    <div class="smoke-line"><b>HAU</b><span></span></div>
+  </div>
   <div class="gifbox"><img id="gif" src="asier.gif" alt="Ez erre"></div>
   <div class="phrase" id="phrase"></div>
   <button class="back" id="backSmoke">ATZERA</button>
@@ -66,7 +73,6 @@ body{min-height:100vh}.screen{min-height:100vh;padding:28px 20px;display:flex;fl
   <div class="copy"><span class="orange">«Erretzeari utzi, betiko»</span><br>Hori diote mediku eta sasi-jakintsuek. Denetik probatu duzu: pilulak, hipnosia, magia... baina ezerk ez du funtzionatu.</div>
   <div class="copy"><b class="orange">Zergatik?</b><br>Inoiz gehiago ez erretzea benetan ezin duzun ideia bat delako.</div>
   <div class="hr"></div>
-  <img class="logo" src="euripean_real.png" alt="Euripean Corp.">
   <img class="portrait" src="asier_real.png" alt="Asier K">
   <div class="section-title">ASIER K-REN METODOA</div>
   <div class="copy"><span class="orange">Asier K-ren</span> metodoak horregatik funtzionatzen du: fokea etorkizun urrunetik kendu eta momentura ekartzen duelako.</div>
@@ -81,12 +87,12 @@ body{min-height:100vh}.screen{min-height:100vh;padding:28px 20px;display:flex;fl
 
   <div class="step-n orange">2</div>
   <div class="step-title orange">EZ DUT ZIGARRO HAU<br>ERREKO</div>
-  <div class="copy">Gutxien espero duzunean borondate hori erabaki batean gorputzutuko da: ez dut zigarro HAU erreko.</div>
+  <div class="copy">Gutxien espero duzunean borondate hori erabaki batean gorputzutuko da: ez dut zigarro <span class="blue">HAU</span> erreko.</div>
 
   <div class="step-n orange">3</div>
   <div class="step-title orange">ZIGARRO BAT ERRETZEKO<br>GOGOA DUZUN ALDIRO...<br>EZ ERRE!!!!</div>
   <div class="copy">Erreko duzu gero, edo beste egun batean, edo sekula! Berdin dio.</div>
-  <div class="copy">Tentazioari gainditzeko lagun izango duzu aplikazio xume hau.</div>
+  <div class="copy">Tentazioari gainditzeko lagun izango duzu <span class="blue">aplikazio xume hau.</span></div>
 
   <button class="back" id="backMethod">ATZERA</button>
 
@@ -102,15 +108,25 @@ body{min-height:100vh}.screen{min-height:100vh;padding:28px 20px;display:flex;fl
     <div class="case-quote">“Sei ordu daramatzat<br>erre gabe!”</div>
   </div>
 </section>
+
+<section id="corp" class="wrap hidden">
+  <div class="corp-logo"><img src="euripean_real.png" alt="Euripean Corp."></div>
+  <div class="corp-title">Komedia zerbitzuak...<br>eta askoz gehiago!</div>
+  <div class="corp-copy">Osasun mentala, beste osasuna,<br>app garapena, coaching,<br>kateringak, web logistics,<br>marrazkiak, baso-garbiketak,<br>sudokuak, ordenu publikoa,<br>bio-ingeniaritza, taekwondo klase<br>partikularrak, mahats-bilketa,<br>dronak, egunkari zutabeak,<br>Aquarium-era bisita gidatuak...<br>eta askoz gehiago!</div>
+  <div class="corp-cta">EZAGUTU GAITZAZU!</div>
+  <button class="back corp-back" id="backCorp">ATZERA</button>
+</section>
 </main>
 <script>
-const home=document.getElementById('home'),smoke=document.getElementById('smoke'),method=document.getElementById('method'),phrase=document.getElementById('phrase'),gif=document.getElementById('gif');
+const home=document.getElementById('home'),smoke=document.getElementById('smoke'),method=document.getElementById('method'),corp=document.getElementById('corp'),phrase=document.getElementById('phrase'),gif=document.getElementById('gif');
 const phrases=["Gogoak pasatzen dira. Zigarroak ez du ezer konpontzen.","Itxaron hamar minutu. Gero erabaki.","Ez duzu zigarro bat behar. Nikotina da eskatzen ari dena.","Gaurko borroka hau bakarrik irabazi behar duzu.","Zigarro bat ez da sari bat. Tranpa bera da berriro.","Arnasa hartu. Ura edan. Bost minutu itxaron.","Gogoa olatu bat da: igo, jaitsi eta desagertu egiten da.","Ez negoziatu gogoarekin. Utzi pasatzen.","Beste behin ere lortu duzu. Oraingoan ere bai.","Zigarro hau ez erretzea nahikoa da oraingoz."];
 let prev=-1;
-function show(s){home.classList.add('hidden');smoke.classList.add('hidden');method.classList.add('hidden');s.classList.remove('hidden')}
+function show(s){home.classList.add('hidden');smoke.classList.add('hidden');method.classList.add('hidden');corp.classList.add('hidden');s.classList.remove('hidden');window.scrollTo(0,0)}
 document.getElementById('go').onclick=()=>{let i;do{i=Math.floor(Math.random()*phrases.length)}while(i===prev&&phrases.length>1);prev=i;phrase.textContent=phrases[i];gif.src='';gif.src='asier.gif?t='+Date.now();show(smoke)}
 document.getElementById('methodBtn').onclick=()=>show(method);
+document.getElementById('corpBtn').onclick=()=>show(corp);
 document.getElementById('backSmoke').onclick=()=>show(home);
 document.getElementById('backMethod').onclick=()=>show(home);
+document.getElementById('backCorp').onclick=()=>show(home);
 </script>
 </body></html>
